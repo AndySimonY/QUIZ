@@ -48,7 +48,7 @@ const HomeScreen = ({fetchQuestions}) => {
     <form className={s.wrapper}>
     {errorMessage && <ErrorMessage>{errorMessage}</ErrorMessage>}
       <div className={s.inputData}>
-        <input type="text" value={countQues} onChange={(e) => setCountQues(e.target.value)} required />
+        <input type="number" value={countQues} onChange={(e) => setCountQues(e.target.value)} required />
         <div className={s.underline}></div>
         <label>Количество вопросов</label>
       </div>
