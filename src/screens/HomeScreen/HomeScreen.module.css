@@ -1,0 +1,100 @@
+.wrapper{
+  display: block;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    width: 600px;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  @media (max-width:810px)  {
+    .wrapper{
+      width: 400px;
+    }
+}
+@media (max-width:810px)  {
+  .wrapper{
+    width: auto;
+  }
+}
+
+
+  
+  .wrapper .inputData{
+    height: 40px;
+    width: 100%;
+    position: relative;
+  }
+  
+  .wrapper .inputData input{
+  height: 100%;
+  width: 100%;
+  border: none;
+  font-size: 17px;
+  border-bottom: 2px solid silver;
+  }
+  
+  .inputData input:focus ~ label,
+  .inputData input:valid ~ label{
+    transform: translateY(-20px);
+    font-size: 15px;
+    color: #09791b;
+  }
+  
+  .wrapper .inputData label{
+  position:absolute;
+  bottom: 10px;
+  left: 0;
+  color: grey;
+  pointer-events: none;
+  transition: all 0.3s ease;
+    }
+  
+    .wrapper .inputData .underline{
+      position: absolute;
+      bottom: 0px;
+      height: 2px;
+      width: 100%;
+    }
+  
+    .inputData .underline:before{
+      position: absolute;
+      content: "";
+      height: 100%;
+      width: 100%;
+      background: #09791b;
+      transform: scaleX(0);
+      transition: transform 0.3s ease;
+    }
+  
+  .inputData input:focus ~ .underline:before,
+  .inputData input:valid ~ .underline:before{
+    transform: scaleX(1);
+  }
+
+.goTest{
+  position: relative;
+  justify-content: center;
+  padding: 12px 36px;
+  margin: 10px 0;
+  color: #0ff0e9;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 2px;
+  border-radius: 40px;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(39,141,97,1) 0%, rgba(6,76,52,1) 100%, rgba(9,121,61,0.9812967423297444) 100%, rgba(0,212,255,1) 100%);
+  transition: all 0.3s ease;
+  border: 0 !important;
+  
+}
+
+.goTest:hover{
+  color:white;
+
+  background: #3fd218;
+  opacity: 1;
+  transition: all 0.5s ease;
+}

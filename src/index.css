@@ -1,3 +1,7 @@
+*{
+  outline: none !important;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -5,9 +9,93 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,121,27,1) 30%, rgba(0,212,255,1) 100%);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+ .content{
+  min-height: 100vh;
+  padding:4rem 0;
+}
+
+/*Все что связано с выпадающими списками и формой домашней страницы*/
+
+
+
+
+.dropdown{
+  margin-top: 40px;
+  background-color: white;
+  width: 100%;
+}
+
+
+
+.dropdownSelect{
+  border-radius: 4px;
+  background-color: white;
+  width: 100%;
+  cursor: pointer;
+  font-size: 17px;
+}
+.dropdown-list{
+  border-radius: 4px;
+  background-color: white;
+  position: absolute;
+  top:100%;
+  max-height: 250px;
+  overflow-y: scroll;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s linear, visibility 0.2s linear;
+}
+.dropdown-list__item{
+  padding: 1rem;
+  font-size: 15px;
+}
+
+
+.dropdown:hover .dropdown-list{
+  opacity: 1;
+  z-index: 2;
+  visibility: visible;
+  display: block;
+}
+
+
+table{
+  text-align: center !important;
+}
+
+th{
+    text-transform: uppercase;
+    
+}
+
+.tableDiv{
+  width: auto;
+  padding-left: 8rem;
+  margin: auto;
+
+}
+@media (max-width:814px)  {
+  .tableDiv{
+    padding-left: 2rem;
+  }
+}
+
+/*Все что связано с инпутом и формой домашней страницы*/
+
+
+.circle-position{
+  display: flex;
+  justify-content: center;
 }
