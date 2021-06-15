@@ -24,7 +24,7 @@ const [score, setScore] = React.useState(0)
 
 
     <>
-    <BrowserRouter>
+    <BrowserRouter basename='/QUIZ'>
     <main className="container content">
       <Switch>
       <Route path="/" exact>
