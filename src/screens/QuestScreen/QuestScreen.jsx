@@ -4,23 +4,25 @@ import Cpinner from "../../components/Cpinner";
 import './Quiz.css'
 import Question from '../Question/Question'
 import { useHistory } from "react-router-dom";
-const QuestScreen = ({ question, score, setScore, setQuestion }) => {
+const QuestScreen = ({ question, score, setScore, setQuestion}) => {
   const [options, setOptions] = React.useState();
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const history = useHistory()
 
   React.useEffect(() => {
+    if(question){
       setOptions(
-        question &&
           handleRandomPosition([
             question[currentQuestion]?.correct_answer,
             ...question[currentQuestion]?.incorrect_answers,
           ])
       );
-    
+    }else{
 
-  }, [question, currentQuestion]);
-
+        setQuestion()
+        history.push('/')
+    }
+  }, [question, currentQuestion, setQuestion, history])
   const handleRandomPosition = (optionss) => {
     return optionss.sort(() => Math.random() - 0.5);
   };
@@ -31,14 +33,15 @@ const QuestScreen = ({ question, score, setScore, setQuestion }) => {
     setQuestion()
 }
 
+
   return (
+    <>
     <div className={s.wrapper}>
       {question ? 
-      <>
-      {!question[currentQuestion] ? history.push('/result') : (
+      (<>
+      {!question[currentQuestion] ? history.push('/') : (
           <>
       <div className='quizInfo'>
-        
         <span>{question[currentQuestion].category}</span>
         <span>Score : {score}</span>
       </div>
@@ -54,14 +57,14 @@ const QuestScreen = ({ question, score, setScore, setQuestion }) => {
       />
       </>
       )}
-      </> :(
+      </>) :(
         <>
       <Cpinner/>
       <button onClick={handleGomePage} style={{display:'flex',margin:'auto', marginTop:'20px'}} className={s.goTest}>Выйти</button>
       </>
       )}
-      
       </div>
+      </>
   );
 };
 

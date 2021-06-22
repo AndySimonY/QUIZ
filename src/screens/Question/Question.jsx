@@ -3,7 +3,7 @@ import  './Question.css'
 import s from "./../HomeScreen/HomeScreen.module.css";
 import ErrorMessage from "../../components/ErrorMessage";
 import { useHistory } from 'react-router-dom';
-import { difficultyData } from '../../data/categoryData';
+
 
 
 
@@ -46,13 +46,8 @@ const Question = ({
             difficultyQue.push(question[currentQuestion].difficulty)
             trueFalse.push(0)
         }
-          
-        
-        console.log(trueFalse);
-        console.log(difficultyQue);
         setErrorMessage(false)
     }
-    debugger
 
     const handleNext = () =>{
         if(currentQuestion + 1 >= question.length){
